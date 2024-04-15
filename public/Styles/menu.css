@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+.main {
+    padding: 15px;
+}
+
+header {
+    margin-bottom: 50px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 11.5vh;
+}
+
+.nav-item {
+    font-family: "Roboto Condensed";
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.navbar-nav {
+    height: 100%;
+}
+
+.nav-item a {
+    color: black;
+}
+
+.nav-item a:hover {
+    color: white;
+    background-color: #041280;
+}
+
+#logo {
+    height: 18vh;
+    margin-top: 43px;
+    padding: 0;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3), 0px 0px 5px rgba(0, 0, 0, 0.1);
+    margin-right: 10px;
+}
+
+#banner-image {
+    width: 100%;
+    height: auto;
+    border-bottom: 3px solid black;
+    border-top: 3px solid black;
+}
+
+#login , #logout{
+    background-color: #041280;
+    color: white;
+    border-radius: 0;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-family: "Roboto Condensed";
+}
+
+#greetingMessage{
+    color: black;
+    border-radius: 0;
+    position: absolute;
+    top: 50%;
+    right: 120px;
+    transform: translateY(-50%);
+    font-family: "Roboto Condensed";
+}
+
+#register {
+    background-color: #041280;
+    color: white;
+    border-radius: 0;
+    position: absolute;
+    top: 50%;
+    right: 75px;
+    transform: translateY(-50%);
+    font-family: "Roboto Condensed";
+}
+
+#login:hover,
+#register:hover,
+#logout:hover {
+    background-color: white;
+    color: #041280;
+    border-color: #041280;
+}
+
+@media (max-width: 1450px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+    }
+    
+    .navbar-nav {
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .nav-item {
+        margin-right: 0;
+        margin-bottom: 10px
+    }
+
+    #logo {
+        max-height: 250px;
+        max-width: max-content;
+        width: auto;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .buttons {
+        margin-top: 30px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+    
+}
+
+.footer-content i {
+    color: white;
+}
+
+.footer-content {
+    border-top: 3px solid black;
+}
+
+footer {
+    background-color: #041280;
+    font-family: "Roboto Condensed";
+}
+
+h1 {
+    display: inline-block;
+    border-bottom: 6px solid #041280;
+    font-family: "Roboto Condensed";
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.separator {
+    border-bottom: 4px solid #041280;
+    margin-left: 800px;
+}
+
+.category-content {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    position: absolute;
+    top: 11%;
+    left: 80%;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+    height: 60vh;
+    width: 400px;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.category-heading {
+    font-family: "Roboto Condensed";
+    font-weight: bold;
+}
+
+.category-description {
+    font-family: "Roboto Condensed";
+}
+
+.category-section {
+    position: relative !important;
+    width: 75% !important;
+    margin-bottom: 70px !important;
+    margin-top: 70px !important;
+    margin-left: 82px !important;
+    padding: 0 !important;
+}
+
+.category-content .btn {
+    background-color: #041280;
+    color: white;
+    border-radius: 0;
+    font-weight: bold;
+}
+
+.category-content .btn:hover {
+    background-color: white;
+    color: #041280;
+    border-color: #041280;
+}
+
+.category-section .img-fluid {
+    width: 1500px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 1450px) {
+    .category-content {
+        width: 90%; /* Adjust the width to be more flexible */
+        left: 5%; /* Center the content horizontally */
+        top: 20%; /* Adjust the top positioning */
+        height: auto; /* Allow the height to grow as needed */
+    }
+
+    .category-section {
+        width: 100% !important; /* Use the full width of the container */
+        margin-left: 0 !important; /* Remove specific margins for responsiveness */
+        margin-right: 0 !important; /* Ensure it does not overflow the parent */
+    }
+
+    .category-section .img-fluid {
+        width: 100%; /* Make the image responsive */
+        height: auto; /* Maintain aspect ratio */
+        box-shadow: none; /* Optionally remove the shadow if it feels too much */
+    }
+}

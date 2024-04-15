@@ -1,0 +1,84 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model Category {
+  id       Int     @id @default(autoincrement())
+  name     String  @unique
+  desc     String
+  imageUrl String?
+  Dish     Dish[]
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model Dish {
+  id       Int       @id @default(autoincrement())
+  name     String    @unique
+  category String?
+  price    Decimal   @db.Decimal
+  desc     String
+  imageUrl String?
+  Category Category? @relation(fields: [category], references: [name], onDelete: NoAction, onUpdate: NoAction, map: "public_Dish_category_fkey")
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model Employee {
+  id       Int       @id @default(autoincrement())
+  name     String    @unique
+  position String?
+  exp      String
+  imageUrl String?
+  Position Position? @relation(fields: [position], references: [name], onDelete: NoAction, onUpdate: NoAction, map: "public_Employee_position_fkey")
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model Feedback {
+  id         Int      @id @default(autoincrement())
+  name       String?
+  rating     Int?
+  content    String?
+  isApproved Boolean?
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model Gallery {
+  id       Int     @id @default(autoincrement())
+  name     String  @unique
+  imageUrl String?
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model Position {
+  id       Int        @id @default(autoincrement())
+  name     String     @unique
+  desc     String
+  Employee Employee[]
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model Service {
+  id       Int     @id @default(autoincrement())
+  name     String  @unique
+  desc     String
+  imageUrl String?
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  email    String @unique
+  name     String @unique
+  password String
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model Session {
+  id    Int     @id @default(autoincrement())
+  email String
+  name  String?
+}
